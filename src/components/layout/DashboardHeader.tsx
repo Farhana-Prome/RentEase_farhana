@@ -1,7 +1,7 @@
 import { Bell, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SidebarTrigger } from "@/components/ui/sidebar";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@tanstack/react-router";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -17,7 +17,7 @@ export function DashboardHeader() {
 
   const handleLogout = () => {
     console.log("Logging out...");
-    navigate("/");
+    navigate({ to: "/" });
   };
 
   return (

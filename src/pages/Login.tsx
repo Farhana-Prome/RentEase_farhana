@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Building2 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@tanstack/react-router";
 import { toast } from "sonner";
 
 const Login = () => {
@@ -23,7 +23,7 @@ const Login = () => {
   const onSubmit = (data: LoginFormData) => {
     console.log("Login attempt:", data);
     toast.success("Login successful!");
-    navigate("/dashboard");
+    navigate({ to: "/dashboard" });
   };
 
   return (
@@ -77,7 +77,7 @@ const Login = () => {
           <div className="text-sm text-center text-muted-foreground">
             Don't have an account?{" "}
             <button
-              onClick={() => navigate("/signup")}
+              onClick={() => navigate({ to: "/signup" })}
               className="text-primary hover:underline font-medium"
             >
               Sign up

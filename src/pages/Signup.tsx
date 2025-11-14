@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Building2 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@tanstack/react-router";
 import { toast } from "sonner";
 
 const Signup = () => {
@@ -27,7 +27,7 @@ const Signup = () => {
   const onSubmit = (data: SignupFormData) => {
     console.log("Signup attempt:", data);
     toast.success("Account created successfully!");
-    navigate("/dashboard");
+    navigate({ to: "/dashboard" });
   };
 
   return (
@@ -128,7 +128,7 @@ const Signup = () => {
           <div className="text-sm text-center text-muted-foreground">
             Already have an account?{" "}
             <button
-              onClick={() => navigate("/login")}
+              onClick={() => navigate({ to: "/login" })}
               className="text-primary hover:underline font-medium"
             >
               Sign in

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@tanstack/react-router";
 
 export function HeroSection() {
   const navigate = useNavigate();
@@ -33,11 +33,11 @@ export function HeroSection() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button size="lg" className="text-lg px-8" onClick={() => navigate("/signup")}>
+            <Button size="lg" className="text-lg px-8" onClick={() => navigate({ to: "/signup" })}>
               Get Started Free
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8" onClick={() => navigate("/login")}>
+            <Button size="lg" variant="outline" className="text-lg px-8" onClick={() => navigate({ to: "/login" })}>
               Sign In
             </Button>
           </div>

@@ -1,6 +1,6 @@
 import { LayoutDashboard, Building2, Users, CreditCard, Lightbulb, BarChart3 } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@tanstack/react-router";
 import {
   Sidebar,
   SidebarContent,
@@ -44,7 +44,7 @@ export function AppSidebar() {
               {menuItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild isActive={isActive(item.url)}>
-                    <NavLink to={item.url} className="flex items-center gap-3">
+                    <NavLink to={item.url as any} className="flex items-center gap-3">
                       <item.icon className="h-5 w-5" />
                       <span>{item.title}</span>
                     </NavLink>
