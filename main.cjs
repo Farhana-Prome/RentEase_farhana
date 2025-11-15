@@ -1,8 +1,25 @@
 // 1. Import necessary modules
 const express = require('express');
+
+
+const cors = require('cors');
+
+
 const { Pool } = require('pg');
 const app = express();
 const port = 3000;
+
+
+
+app.use(cors({
+    // Allow requests from the frontend's development URL (Vite default)
+    origin: 'http://localhost:5173', 
+    credentials: true,
+}));
+app.use(express.json());
+
+
+
 
 // 2. Configure the database connection pool
 const pool = new Pool({
